@@ -15,7 +15,7 @@ class FileManagerTest(unittest.TestCase):
         )
 
     def test_open_exist_folder(self):
-        self.file_manager.open_folder('folder')
+        self.file_manager.open_('folder')
 
         self.assertEquals(
             self.file_manager.current_path,
@@ -29,7 +29,7 @@ class FileManagerTest(unittest.TestCase):
 
     def test_open_non_exist_folder(self):
         with self.assertRaises(ValueError):
-            self.file_manager.open_folder('non-exist_folder')
+            self.file_manager.open_('non-exist_folder')
 
     def test_ls(self):
         self.assertCountEqual(
